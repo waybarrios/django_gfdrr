@@ -6,7 +6,6 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # This section is borrowed from the official Django image but adds GDAL and others
-python-pip python-dev build-essential 
 
 RUN apt-get update && apt-get install -y\
             build-essential \
