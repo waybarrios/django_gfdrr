@@ -18,8 +18,7 @@ RUN apt-get update && apt-get install -y\
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 
-RUN apt-get install -y --force-yes \
-            openjdk-6-jdk ant maven2 \
+RUN apt-get install -y --force-yes openjdk-6-jdk ant maven2 \
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 COPY wait-for-postgres.sh /usr/bin/wait-for-postgres
