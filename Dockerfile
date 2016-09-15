@@ -15,10 +15,7 @@ RUN apt-get update && apt-get install -y\
             python-multipartposthandler transifex-client python-paver python-nose \
             python-django-nose python-gdal python-django-pagination python-django-jsonfield \
             python-django-extensions python-django-taggit python-httplib2 \
-    --no-install-recommends && rm -rf /var/lib/apt/lists/*
-
-
-RUN apt-get install -y --force-yes openjdk-6-jdk ant maven2 \
+            openjdk-6-jdk ant maven2\
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 COPY wait-for-postgres.sh /usr/bin/wait-for-postgres
