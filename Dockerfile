@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 MAINTAINER Wayner Barrios<waybarrios@gmail.com>
 #Source: https://github.com/GeoNode/django-docker
-
+#Thanks to: @ingenieroAriel
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
