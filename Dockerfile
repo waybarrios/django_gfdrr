@@ -1,21 +1,24 @@
 FROM python:2.7.9
 MAINTAINER Wayner Barrios<waybarrios@gmail.com>
+
 #Source: https://github.com/GeoNode/django-docker
 #Thanks to: @ingenieroAriel
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # This section is borrowed from the official Django image but adds GDAL and others
-
-RUN apt-get update && apt-get install -y\
-            build-essential \
-            libxml2-dev libxslt1-dev libjpeg-dev gettext git \
-            python-dev python-pip\
-            python-pillow python-lxml python-psycopg2 python-django python-bs4 \
-            python-multipartposthandler transifex-client python-paver python-nose \
-            python-django-nose python-gdal python-django-pagination python-django-jsonfield \
-            python-django-extensions python-django-taggit python-httplib2 \
-            
+RUN apt-get update && apt-get install -y \
+		gcc \
+		gettext \
+		postgresql-client libpq-dev \
+		sqlite3 \
+                python-gdal python-psycopg2 \
+                python-imaging python-lxml \
+                python-dev libgdal-dev \
+                python-ldap \
+                libmemcached-dev libsasl2-dev zlib1g-dev \
+                python-pylibmc \
     --no-install-recommends && rm -rf /var/lib/apt/lists/*
 
 COPY wait-for-postgres.sh /usr/bin/wait-for-postgres
