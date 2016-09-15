@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM python:2.7.9
 MAINTAINER Wayner Barrios<waybarrios@gmail.com>
 #Source: https://github.com/GeoNode/django-docker
 #Thanks to: @ingenieroAriel
@@ -6,6 +6,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # This section is borrowed from the official Django image but adds GDAL and others
+python-pip python-dev build-essential 
 
 RUN apt-get update && apt-get install -y\
             build-essential \
@@ -23,7 +24,7 @@ RUN chmod +x /usr/bin/wait-for-postgres
 
 # python-gdal does not seem to work, let's install manually the version that is 
 # compatible with the provided libgdal-dev 
-#RUN pip install GDAL==1.10 --global-option=build_ext --global-option="-I/usr/include/gdal"
+RUN pip install GDAL==1.10 --global-option=build_ext --global-option="-I/usr/include/gdal"
 
 # Copy the requirements first to avoid having to re-do it when the code changes. 
 # Requirements in requirements.txt are pinned to specific version 
