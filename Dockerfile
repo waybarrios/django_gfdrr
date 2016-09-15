@@ -23,7 +23,7 @@ RUN chmod +x /usr/bin/wait-for-postgres
 
 # python-gdal does not seem to work, let's install manually the version that is 
 # compatible with the provided libgdal-dev 
-RUN pip install GDAL==1.10 --global-option=build_ext --global-option="-I/usr/include/gdal"
+#RUN pip install GDAL==1.10 --global-option=build_ext --global-option="-I/usr/include/gdal"
 
 # Copy the requirements first to avoid having to re-do it when the code changes. 
 # Requirements in requirements.txt are pinned to specific version 
