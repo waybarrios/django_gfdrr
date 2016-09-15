@@ -1,0 +1,2 @@
+#GeoNode
+git+https://github.com/gfdrr/geonode.git#egg=GeoNode
