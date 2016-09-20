@@ -1,8 +1,6 @@
 pillow==3.3.1
 lxml==3.6.4
-
-# "psycopg2==2.4.5", # python-psycopg2
-
+psycopg2==2.4.5
 Django==1.6.10
 beautifulsoup4==4.2.1
 MultipartPostHandler==0.1.0
