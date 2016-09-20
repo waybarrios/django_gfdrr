@@ -50,7 +50,7 @@ gsimporter==0.1
 gisdata==0.5.4
 
 #GeoNode
-#git+https://github.com/gfdrr/geonode.git#egg=GeoNode
+GeoNode==2.4a1
 
 # geopython dependencies
 OWSLib==0.8.10
